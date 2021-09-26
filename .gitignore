@@ -1,0 +1,8 @@
+backend-scm/node_modules/
+backend-scm/config/keys-dev.js
+
+backend-user/node_modules/
+backend-user/config/keys-dev.js
+
+frontend/node_modules/
+frontend/build/
