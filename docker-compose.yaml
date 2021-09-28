@@ -1,0 +1,14 @@
+version: '3'
+services:
+  scm:
+    image: "donascimentomarcelo/backend-scm:alpha"
+    ports: 
+     - "3030:3030"
+  user:
+    image: "donascimentomarcelo/backend-user:alpha"
+    ports:
+     - "3020:3020"
+  frontend:
+    image: "donascimentomarcelo/frontend:alpha"
+    ports:
+     - "81:80"
