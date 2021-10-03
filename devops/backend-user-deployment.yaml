@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-user
+  template:
+    metadata:
+      labels:
+        app: backend-user
+    spec:
+      containers:
+      - name: backend-user-container
+        image: donascimentomarcelo/backend-user:alpha
+        ports:
+        - containerPort: 3020
+        env:
+        - name: NODE_ENV
+          value: "staging"
+        - name: MONGO_URI
+          value: "mongodb+srv://missao-devops-db:1234@missao-devops.99oyi.mongodb.net/missao-devops?retryWrites=true&w=majority"
+        - name: SECRET_OR_KEY
+          value: "missao-devops"
