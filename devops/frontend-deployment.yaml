@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: donascimentomarcelo/frontend:alpha
+        image: donascimentomarcelo/frontend:alpha-staging
         ports:
         - containerPort: 80
