@@ -21,7 +21,10 @@ spec:
         - containerPort: 3020
         env:
         - name: NODE_ENV
-          value: "staging"
+          valueFrom:
+            configMapKeyRef:
+              name: questcode
+              key: NODE_ENV
         - name: MONGO_URI
           value: "mongodb+srv://missao-devops-db:1234@missao-devops.99oyi.mongodb.net/missao-devops?retryWrites=true&w=majority"
         - name: SECRET_OR_KEY
