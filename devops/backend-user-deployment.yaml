@@ -26,6 +26,13 @@ spec:
               name: questcode
               key: NODE_ENV
         - name: MONGO_URI
-          value: "mongodb+srv://missao-devops-db:1234@missao-devops.99oyi.mongodb.net/missao-devops?retryWrites=true&w=majority"
+          # value: "mongodb+srv://missao-devops-db:1234@missao-devops.99oyi.mongodb.net/missao-devops?retryWrites=true&w=majority"
+          valueFrom:
+            secretMapKeyRef:
+              name: questcode
+              key: MONGO_URI
         - name: SECRET_OR_KEY
-          value: "missao-devops"
+          valueFrom:
+            secretMapKeyRef:
+              name: questcode
+              key: SECRET_OR_KEY

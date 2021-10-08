@@ -31,6 +31,12 @@ spec:
               name: questcode
               key: GITHUB_CLIENT_ID
         - name: GITHUB_CLIENT_SECRET
-          value: "535a73a53569663278589e4d5722746ecc4d483d"
+          valueFrom:
+            secretKeyRef:
+              name: questcode
+              key: GITHUB_CLIENT_SECRET
         - name: SECRET_OR_KEY
-          value: "missao-devops"
+          valueFrom:
+            secretKeyRef:
+              name: questcode
+              key: SECRET_OR_KEY
