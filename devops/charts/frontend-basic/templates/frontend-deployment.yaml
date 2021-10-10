@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: frontend
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: donascimentomarcelo/frontend:alpha-staging
+        image: donascimentomarcelo/frontend:{{ .Values.image.tag }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.container.port }}
