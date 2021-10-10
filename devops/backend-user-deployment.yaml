@@ -28,11 +28,11 @@ spec:
         - name: MONGO_URI
           # value: "mongodb+srv://missao-devops-db:1234@missao-devops.99oyi.mongodb.net/missao-devops?retryWrites=true&w=majority"
           valueFrom:
-            secretMapKeyRef:
+            secretKeyRef:
               name: questcode
               key: MONGO_URI
         - name: SECRET_OR_KEY
           valueFrom:
-            secretMapKeyRef:
+            secretKeyRef:
               name: questcode
               key: SECRET_OR_KEY
