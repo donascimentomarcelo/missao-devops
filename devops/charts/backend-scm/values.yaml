@@ -1,12 +1,12 @@
-# Default values for frontend.
+# Default values for backend-scm.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 3
 
 image:
-  repository: donascimentomarcelo/frontend
-  tag: alpha-staging
+  repository: donascimentomarcelo/backend-scm
+  tag: alpha
   pullPolicy: Always
 
 imagePullSecrets: []
@@ -34,7 +34,8 @@ securityContext: {}
 service:
   type: NodePort
   port: 80
-  nodePort: 30080
+  targetPort: 3030
+  nodePort: 30030
 
 ingress:
   enabled: false
